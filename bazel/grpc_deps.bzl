@@ -216,6 +216,8 @@ def grpc_deps():
     if "com_github_google_re2" not in native.existing_rules():
         http_archive(
             name = "com_github_google_re2",
+	    patch_args = ["-p1"],
+	    patches = ["@com_github_grpc_grpc//:re2_no_thread_local_darwin.patch"],
             sha256 = "9f385e146410a8150b6f4cb1a57eab7ec806ced48d427554b1e754877ff26c3e",
             strip_prefix = "re2-aecba11114cf1fac5497aeb844b6966106de3eb6",
             urls = [

@@ -19,6 +19,7 @@ licenses(["notice"])
 exports_files([
     "LICENSE",
     "etc/roots.pem",
+    "re2_no_thread_local_darwin.patch",
 ])
 
 package(
